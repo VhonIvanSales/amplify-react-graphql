@@ -67,7 +67,7 @@ const App = ({ signOut }) => {
   //deleteNote:
   //Like createNote, this function is sending a GraphQL mutation along with some variables, but instead of 
   //creating a note, we are deleting a note.
-  async function deleteNote({ id }) {
+  async function deleteNote({ id, name }) {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
     await Storage.remove(name);
